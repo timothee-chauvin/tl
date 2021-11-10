@@ -12,3 +12,9 @@
 
 - run commands:
 `ssh user@host "{{commands}}"`
+
+- authentication forwarding (if not already specified in config):
+`-A`
+
+- specific port:
+`-p {{port}}`

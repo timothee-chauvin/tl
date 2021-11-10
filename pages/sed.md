@@ -11,3 +11,6 @@
 
 - don't print (e.g. there's already a print clause in the command):
 `-n`
+
+- search and replace recursively:
+`rg -l "{{pattern}}" . | xargs sed -i {{sed_command}}`
