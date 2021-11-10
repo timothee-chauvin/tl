@@ -1,0 +1,95 @@
+#!/usr/bin/env python
+
+"""
+tl: a bit like tldr but using custom pages (and allowing to edit them easily).
+"""
+
+import os
+import re
+import sys
+from pathlib import Path
+
+from termcolor import colored
+
+DIR = Path("~/org/tl").expanduser()
+LEADING_SPACES_NUM = 2
+COLORS = {
+    # category: (color, background color, attributes)
+    "name": ("yellow", None, ["bold"]),
+    "description": (None, None, []),
+    "example": ("green", None, []),
+    "command": ("red", None, []),
+    "parameter": (None, None, []),
+}
+COMMAND_SPLIT_REGEX = re.compile(r"(?P<param>{{.+?}})")
+PARAM_REGEX = re.compile(r"(?:{{)(?P<param>.+?)(?:}})")
+
+
+def show_help():
+    print("Usage: tl COMMAND [e|edit]")
+    print("File syntax:")
+    os.system(f"cat {DIR}/template.md")
+    sys.exit(1)
+
+
+def edit_cmd(cmd):
+    os.system(f"$EDITOR {DIR}/{cmd}.md")
+
+
+def show_cmd(cmd):
+    """
+    Inspired from:
+    https://github.com/tldr-pages/tldr-python-client/blob/master/tldr.py.
+    Print the page with some nice colors.
+    """
+    fn = f"{DIR}/{cmd}.md"
+    if not Path(fn).is_file():
+        print(f"{fn} doesn't exist")
+        sys.exit(2)
+    print()
+    for line in open(fn):
+        line = line.rstrip()
+        if len(line) == 0:
+            print()
+            continue
+        if line[0] == "#":
+            line = " " * LEADING_SPACES_NUM + colored(
+                line.replace("# ", ""), *COLORS["name"]
+            )
+        elif line[0] == ">":
+            line = " " * (LEADING_SPACES_NUM - 1) + colored(
+                line.replace(">", ""), *COLORS["description"]
+            )
+        elif line[0] == "-":
+            line = " " * LEADING_SPACES_NUM + colored(line, *COLORS["example"])
+        elif line[0] == "`":
+            line = line[1:-1]
+            elements = [" " * (LEADING_SPACES_NUM + 2)]
+            for item in COMMAND_SPLIT_REGEX.split(line):
+                item, replaced = PARAM_REGEX.subn(
+                    lambda x: colored(x.group("param"), *COLORS["parameter"]), item
+                )
+                if not replaced:
+                    item = colored(item, *COLORS["command"])
+                elements.append(item)
+                line = "".join(elements)
+        else:  # free text
+            line = " " * LEADING_SPACES_NUM + line
+        print(line)
+    print()
+
+
+def main():
+    DIR.mkdir(parents=True, exist_ok=True)
+
+    if len(sys.argv) == 1:
+        show_help()
+    cmd = sys.argv[1]
+    if len(sys.argv) > 2 and sys.argv[2] in ("e", "edit"):
+        edit_cmd(cmd)
+    else:
+        show_cmd(cmd)
+
+
+if __name__ == "__main__":
+    main()
