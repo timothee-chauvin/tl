@@ -20,3 +20,6 @@
 first create/update the database:
 `pacman -Fy`
 
+- update a single package:
+`pacman -S {{package}}`
+(after pacman -Sy)
