@@ -6,6 +6,9 @@
 `    *) {{...}};;`
 `esac`
 
+- test whether file exists, regardless of type:
+`[ -e {{file}} ]`
+
 - test whether file exists and is not empty:
 `[ -s {{file}} ]`
 

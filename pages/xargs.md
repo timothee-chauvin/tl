@@ -11,3 +11,6 @@
 
 - only supply one line at a time to the command (e.g. if the command doesn't support multiple arguments, like xxd):
 `--max-lines=1`
+
+- give a pipeline to xargs:
+`xargs sh -c "{{pipeline}}"`

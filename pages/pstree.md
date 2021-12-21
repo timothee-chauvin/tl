@@ -1,0 +1,4 @@
+# pstree
+
+- show PIDs:
+`-p`

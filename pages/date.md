@@ -20,5 +20,9 @@
 - hour, minute, second:
 `%H %M %S`
 
+- nanoseconds:
+`%N`
+(seemingly relatively linux-specific)
+
 - day of the week (e.g. Monday):
 `%A`

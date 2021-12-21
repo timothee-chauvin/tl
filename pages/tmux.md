@@ -21,3 +21,6 @@ Paste: C-b ]
 
 - kill session:
 `tmux kill-session -t {{session-name}}`
+
+ -rename window:
+`C-b ,`

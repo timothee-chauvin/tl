@@ -8,3 +8,10 @@
 
 - specify a max depth (lowest meaningful is 1):
 `(--max-depth|-d) {{n}}`
+
+- install on Debian-based distros:
+`apt install fd-find`
+then binary is named fdfind
+
+- keep only the basename instead of the entire relative path:
+`fd {{...}} | awk -F/ '{print $NF}'`

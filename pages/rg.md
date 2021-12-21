@@ -19,4 +19,8 @@
 `rg -a '(?-u)\x{{30}}'`
 
 - show lines including non-ASCII characters:
+`rg -P -n "[^[:ascii:]]"`
 `rg -P -n "[\x80-\xFF]"`
+
+- treat pattern as a literal string rather than a regex:
+`(-F|--fixed-strings)`
