@@ -27,3 +27,6 @@
 
 - use the PCRE2 engine to use e.g. lookaround assertions:
 `--pcre2`
+
+- don't display filenames even if searching multiples files:
+`(-I|--no-filename)`
