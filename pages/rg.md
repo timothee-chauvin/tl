@@ -24,3 +24,6 @@
 
 - treat pattern as a literal string rather than a regex:
 `(-F|--fixed-strings)`
+
+- use the PCRE2 engine to use e.g. lookaround assertions:
+`--pcre2`
