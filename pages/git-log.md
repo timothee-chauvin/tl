@@ -38,3 +38,6 @@
 
 - show all branches:
 `--all`
+
+- show all developers and their email addresses:
+`git log --all --format='%an %ae' | sort -u`
