@@ -1,8 +1,14 @@
 # rsync
 
 - basically like cp, but better:
-`rsync -avh --progress`
-(archive, verbose, human-readable)
+`rsync -avhP`
+(archive, verbose, human-readable, --partial --progress)
+
+- only copy the files which don't already exist on the destination (or which have a modified timestamp lower than the local one):
+`(-u|--update)`
+
+- dry-run:
+`(-n|--dry-run)`
 
 - archive mode (equivalent of -rlptgoD):
 `-a`
@@ -18,3 +24,4 @@ D: same as --devices --specials.
 
 - copy directories recursively:
 `-r`
+
