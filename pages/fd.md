@@ -15,3 +15,6 @@ then binary is named fdfind
 
 - keep only the basename instead of the entire relative path:
 `fd {{...}} | awk -F/ '{print $NF}'`
+
+- only files:
+`(-t|--type) (f|file)`
