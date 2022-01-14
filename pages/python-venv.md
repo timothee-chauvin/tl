@@ -1,10 +1,10 @@
 # python venv
 
 - create:
-`python -m venv {{venv directory (typically .venv)}}`
+`python -m venv {{.venv}}`
 
 - activate:
-`source .venv/bin/activate`
+`source {{.venv}}/bin/activate`
 
 - deactivate:
 `deactivate`

@@ -24,3 +24,13 @@ Paste: C-b ]
 
  -rename window:
 `C-b ,`
+
+## .tmux.conf
+- location: ~/.tmux.conf
+
+- get tmux to pick up the changes without killing all sessions:
+`tmux source ~/.tmux.conf`
+
+- change number of lines saved for future panes (default is only 2000):
+`set-option -g history-limit {{50000}}`
+(a line isn't delimited by \n, but by the width of the pane, so no risk of massive lines sucking up memory)
