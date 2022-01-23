@@ -5,3 +5,6 @@
 
 - some format to mp4
 `ffmpeg -i {{input.ogv}} -crf 18 {{output.mp4}}`
+
+- motion blur (but very crude, simply merging consecutive frames, no optical flow. Can work in some contexts though):
+`-filter_complex tmix=frames={{7}}:weights="{{1 1 1 1 1 1 1}}"`
