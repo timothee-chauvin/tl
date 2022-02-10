@@ -14,3 +14,7 @@
 
 - search and replace recursively:
 `rg -l "{{pattern}}" . | xargs sed -i {{sed_command}}`
+
+- apply a command (e.g. delete, d) to lines between START_PATTERN and END_PATTERN:
+`'/{{START_PATTERN}}/,/{{END_PATTERN}}/ {{d}}'`
+(if the range exists multiple times, will be applied multiple times)

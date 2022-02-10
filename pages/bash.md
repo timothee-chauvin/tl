@@ -15,3 +15,7 @@
 
 - stdin into a variable:
 `myvar=$(</dev/stdin)`
+
+- expand variable programmatically:
+`{{VAR=1; VARNAME=VAR}}; eval echo -e "\$${{VARNAME}}"`
+-> 1

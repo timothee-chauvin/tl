@@ -35,3 +35,6 @@
 
 - show all the files currently tracked by git:
 `git ls-files`
+
+- ignore changes to an existing file locally (make Git assume that the working tree version is the same as in the index):
+`git update-index --assume-unchanged {{file}}`

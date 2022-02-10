@@ -30,3 +30,9 @@
 
 - don't display filenames even if searching multiples files:
 `(-I|--no-filename)`
+
+- count number of occurrences, include a 0 when it's 0 rather than printing nothing:
+`(-c|--count) --include-zero`
+
+- don't use colors even if printed to the terminal:
+`--color never`
