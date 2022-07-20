@@ -25,6 +25,10 @@ Paste: C-b ]
  -rename window:
 `C-b ,`
 
+- rotate panes clockwise, counterclockwise:
+`C-b }`
+`C-b {`
+
 ## .tmux.conf
 - location: ~/.tmux.conf
 

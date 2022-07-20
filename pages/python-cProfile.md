@@ -24,7 +24,7 @@ cumtime / cumulative: time spent in the function and its descendants
 - parse output of a raw profiling file:
 `import pstats`
 `p = pstats.Stats("{{filename}}")`
-TBD
+`p.sort_stats("time").print_stats()`
 
 - profile from the code, enabling and disabling:
 `import cProfile`

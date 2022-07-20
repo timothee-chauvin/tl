@@ -10,3 +10,6 @@ first on a machine with a working pip:
 copy the directory to the target machine
 go into it, then
 `pip install {{package.tar.gz|package.whl}} -f ./`
+
+- version specification, "compatible with":
+`{{package}}~={{version}}`

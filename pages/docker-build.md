@@ -20,3 +20,6 @@ The command is then made aware of an SSH agent that can sign requests needed for
 
 - remove intermediate containers after successful build (default: true):
 `--rm`
+
+- with BUILDKIT, see all the output rather than hiding it:
+`--progress=plain`
