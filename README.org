@@ -4,7 +4,12 @@
 
 Some tldr clients probably support custom data but I haven't researched it. This works well for me so I don't have any reason to change it now.
 
-My data files actually reside in ~/org/tl~, which is hardcoded in the ~tl~ script and in the snippets below.
+In the snippets below, replace <TL_PATH> with the path to this cloned repo.
+
+We create an alias to be able to invoke tl from anywhere:
+#+begin_src shell
+alias tl='<TL_PATH>/src/tl'
+#+end_src
 
 The following shell function provides a nice integration with [[https://github.com/lotabout/skim][skim]]:
 #+begin_src shell
@@ -12,7 +17,7 @@ t() {
     # Use the power of sk with tl
     # Use "ctrl-e" to edit an entry, RET to simply see it in full
     # /dev/tty trick: from https://github.com/junegunn/fzf/issues/1361
-    ls -1 ~/org/tl/ | rev | cut -c 4- | rev | sk --preview "tl {}" --preview-window wrap --bind "enter:execute(tl {})+abort,ctrl-e:execute(tl {} e < /dev/tty)+abort"
+    ls -1 <TL_PATH>/pages/ | rev | cut -c 4- | rev | sk --preview "tl {}" --preview-window wrap --bind "enter:execute(tl {})+abort,ctrl-e:execute(tl {} e < /dev/tty)+abort"
 }
 #+end_src
 
@@ -24,8 +29,8 @@ _tl() {
     _arguments '1: :->cmdname' '2: :->edit'
     case $state in
     cmdname)
-        # Match all files in $HOME/org/tl, but remove the .md, and then add a space
-        _path_files -W $HOME/org/tl -g '*.md(:r)' -S ' '
+        # Match all files in <TL_PATH>/pages, but remove the .md, and then add a space
+        _path_files -W <TL_PATH>/pages -g '*.md(:r)' -S ' '
     ;;
     edit)
         # Couldn't make it work in any simpler way...

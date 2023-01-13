@@ -11,7 +11,8 @@ from pathlib import Path
 
 from termcolor import colored
 
-DIR = Path("~/org/tl").expanduser()
+# The pages directory is ../pages
+DIR = Path(__file__).parent.parent / "pages"
 LEADING_SPACES_NUM = 2
 COLORS = {
     # category: (color, background color, attributes)
