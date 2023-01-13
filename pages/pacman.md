@@ -4,7 +4,7 @@
 `pacman -Qqe`
 
 - remove now useless files from /var/cache/pacman:
-`pacman -Sc`o
+`pacman -Sc`
 
 - remove a package and its now unneeded dependencies:
 `pacman -Rcns`
