@@ -29,6 +29,10 @@ Paste: C-b ]
 `C-b }`
 `C-b {`
 
+- move to previous/next window:
+`C-b p`
+`C-b n`
+
 ## .tmux.conf
 - location: ~/.tmux.conf
 
@@ -41,10 +45,6 @@ Paste: C-b ]
 
 - turn on mouse support (scroll, select text in only one pane, switch to panes and windows using the mouse... Essential):
 `set -g mouse on`
-
-- move to previous/next window:
-`C-b p`
-`C-b n`
 
 - fix the vim escape delay (https://github.com/neovim/neovim/wiki/FAQ#esc-in-tmux-or-gnu-screen-is-delayed):
 `set -sg escape-time 0`
