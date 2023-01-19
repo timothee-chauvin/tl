@@ -15,3 +15,6 @@
 
 - abort a rebase that's not going well:
 `git rebase --abort`
+
+- keeping our/their changes:
+`--strategy=({{ours}}|{{theirs}})`
