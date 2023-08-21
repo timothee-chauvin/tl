@@ -13,3 +13,6 @@ go into it, then
 
 - version specification, "compatible with":
 `{{package}}~={{version}}`
+
+- from requirements file:
+`pip install -r {{requirements.txt}}`
