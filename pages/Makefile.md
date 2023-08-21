@@ -23,3 +23,6 @@
 `.SILENT: {{target}}`
 `@{{command}}`
 `make -s`
+
+- specify shell to be something other than /bin/sh (e.g. to allow "source" etc):
+`SHELL := /bin/bash`
