@@ -11,3 +11,12 @@
 
 - run a single command in the virtual environment:
 `poetry run {{command}}`
+
+- install dependencies from existing project:
+`poetry install`
+
+- configure virtualenvs to be within projects so IDEs can find them:
+`poetry config virtualenvs.in-project true`
+
+- show virtual environments:
+`poetry env list`
