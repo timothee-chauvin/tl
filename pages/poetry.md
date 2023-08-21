@@ -20,3 +20,8 @@
 
 - show virtual environments:
 `poetry env list`
+
+- change python version:
+<change version in pyproject.toml>
+`poetry lock --no-update`
+`poetry install`
