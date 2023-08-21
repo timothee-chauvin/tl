@@ -8,3 +8,12 @@
 
 - silent (no progress info):
 `(-s|--silent)`
+
+- post:
+`-X POST`
+
+- supply data:
+`-d '{{data}}'`
+
+- specify content type:
+`-H "Content-Type: {{application/json}}"`
